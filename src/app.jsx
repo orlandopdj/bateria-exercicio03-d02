@@ -10,7 +10,6 @@ const App = () => {
     const incrementSteps = () => setStep((s) => s + 1)
     const incrementCount = () => setCount((c) => c + step)
 
-    console.log(date.getDate())
 
 
     return (
