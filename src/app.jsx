@@ -1,14 +1,14 @@
 import { useState } from "react"
 
-const date = new Date()
 
 const App = () => {
     const [step, setStep] = useState(1)
+    const [count, setCount] = useState(0)
 
     const decrementStep = () => setStep((s) => (s === 1 ? s : s - 1))
-    const handleClickMenosContagem = () => console.log('Clicou no menos do Contagem')
+    const decrementCount = () => setCount((c) => c - step)
     const incrementSteps = () => setStep((s) => s + 1)
-    const handleClickMaisContagem = () => console.log('Clicou no mais do Contagem')
+    const incrementCount = () => setCount((c) => c + step)
 
     console.log(date.getDate())
 
@@ -22,9 +22,9 @@ const App = () => {
                     <button onClick={incrementSteps}>+</button>
                 </div>
                 <div className="count">
-                    <button onClick={handleClickMenosContagem}>-</button>
-                    <h2>Contagem: 0</h2>
-                    <button onClick={handleClickMaisContagem}>+</button>
+                    <button onClick={decrementCount}>-</button>
+                    <h2>Contagem: {count}</h2>
+                    <button onClick={incrementCount}>+</button>
                 </div>
                 <h2>Hoje é Domingo, 22 de out. de 2023</h2>
             </div>
